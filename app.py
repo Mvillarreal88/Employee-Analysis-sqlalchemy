@@ -14,6 +14,7 @@ from flask import Flask, jsonify
 engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
 Base = automap_base()
+
 # reflect the tables
 Base.prepare(engine, reflect=True)
 
@@ -41,10 +42,18 @@ app = Flask(__name__)
 @app.route("/")
 def welcome():
     return (
-        f"Welcome to the Weather API!"
+        f"Welcome to my Hawaii weather App!"
+
+        f"For a list of Precipitation data with dates:<br/>"
         f"/api/v1.0/precipitation"
+
+        f"For a list of the stations:<br/>"
         f"/api/v1.0/stations"
+
+        f"For precipitation data:<br/>"
         f"/api/v1.0/tobs"
+
+        f"For weather based on date:<br/>"
         f"/api/v1.0/<start>/<end>"
     )
 
@@ -128,8 +137,6 @@ def Start_end_date(start, end):
         start_end_list.append(start_end_date_dict) 
 
     return jsonify(start_end_list)
-
-##############################################  
 
 if __name__ == '__main__':
     app.run(debug=True)
