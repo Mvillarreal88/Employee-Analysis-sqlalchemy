@@ -30,7 +30,7 @@
 
 ### Climate App
 
-We then desighn a Flask API based on the data and queries that were ran in the Analysis. This will allow the user to acquire the below information:
+We then design a Flask API based on the data and queries that were ran in the Analysis. This will allow the user to acquire the below information:
 
 • The Home page that will list the available routes
 
